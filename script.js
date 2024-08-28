@@ -1,6 +1,3 @@
-//your JS code here. If required.
-// JavaScript to handle the login functionality
-
 document.getElementById("loginForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the form from submitting
 
@@ -33,7 +30,7 @@ function checkExistingUser() {
     if (savedUsername) {
         const existingUserButton = document.createElement("button");
         existingUserButton.id = "existing";
-        existingUserButton.textContent = 'Login as existing user';
+        existingUserButton.textContent = `Login as existing user (${savedUsername})`;
         existingUserButton.addEventListener("click", function () {
             alert(`Logged in as ${savedUsername}`);
         });
