@@ -21,16 +21,19 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     checkExistingUser();
 });
 
+window.onload = checkExistingUser;
+
 function checkExistingUser() {
     const existingUserDiv = document.getElementById("existingUserDiv");
     existingUserDiv.innerHTML = ""; // Clear the div content
 
     const savedUsername = localStorage.getItem("savedUsername");
+    console.log("Saved Username: ", savedUsername); // Add this line
 
     if (savedUsername) {
         const existingUserButton = document.createElement("button");
         existingUserButton.id = "existing";
-        existingUserButton.textContent = `Login as existing user (${savedUsername})`;
+        existingUserButton.textContent = `Login as ${savedUsername}`;
         existingUserButton.addEventListener("click", function () {
             alert(`Logged in as ${savedUsername}`);
         });
