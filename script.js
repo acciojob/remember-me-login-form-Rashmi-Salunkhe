@@ -33,7 +33,7 @@ function checkExistingUser() {
     if (savedUsername) {
         const existingUserButton = document.createElement("button");
         existingUserButton.id = "existing";
-        existingUserButton.textContent = `Login as ${savedUsername}`;
+        existingUserButton.textContent = `Login as existing user`;
         existingUserButton.addEventListener("click", function () {
             alert(`Logged in as ${savedUsername}`);
         });
